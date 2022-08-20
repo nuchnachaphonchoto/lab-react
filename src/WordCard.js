@@ -19,28 +19,35 @@ export default function WordCard(props){
     const[state, setState] = useState(prepareStateFromWord(props.value))
 
     const activationHandler = c => { 
-        console.log(`${c} has been activated.`) 
 
         let guess = state.guess + c
         setState({...state, guess})
 
-        if(guess.length == state.word.length){
-            if(guess == state.word){
-                console.log('yeah!')
-                setState({...state, guess: '', completed: true})
+        if(guess.length === state.word.length){
+            if(guess === state.word){
+                alert('Yeah! The correct word is ' + state.word + '.');
+                setState({...state, guess: '', completed: true ,attempt: 1})
             }else{
-                console.log('reset, next attempt')
+                alert('Try again.');
                 setState({...state, guess: '', attempt: state.attempt + 1})
             }
         }
     }
     return (
         <div>
-            { 
+            <div>
+                { 
                 state.chars.map((c, i) => 
                     <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
                 ) 
-            }
+                }
+            </div>
+            <div class="show">
+                <h3>Your word is</h3>
+                <p>{state.guess}</p>
+                <p>attempt : {state.attempt}</p>
+                
+            </div>
         </div>
     );
 }

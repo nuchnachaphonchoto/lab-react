@@ -5,9 +5,9 @@ import { Link,Outlet } from "react-router-dom";
 function App() {
   return (
     <div class="center">
-    <h1> Game Logic </h1>
+    <h1> Game Logic 🕹️ </h1>
   
-    
+    <h2> select level : </h2>
   
 
     <Link to="/level1" class="button">level1</Link>
