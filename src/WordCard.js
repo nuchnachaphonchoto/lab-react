@@ -17,6 +17,7 @@ const prepareStateFromWord = (given_word) => {
 export default function WordCard(props){
 
     const[state, setState] = useState(prepareStateFromWord(props.value))
+    const reset = () => window.location.reload();
 
     const activationHandler = c => { 
 
@@ -46,7 +47,7 @@ export default function WordCard(props){
                 <h3>Your word is</h3>
                 <p>{state.guess}</p>
                 <p>attempt : {state.attempt}</p>
-                
+                <button class="reset" onClick={reset}><span> Reset  </span></button>
             </div>
         </div>
     );
