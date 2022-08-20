@@ -10,9 +10,9 @@ function App() {
     
   
 
-    <Link to="/level1">level1</Link>
-    <Link to="/level2">level2</Link>
-    <Link to="/level3">level3</Link>
+    <Link to="/level1" class="button">level1</Link>
+    <Link to="/level2" class="button">level2</Link>
+    <Link to="/level3" class="button">level3</Link>
 
     <Outlet />
     
